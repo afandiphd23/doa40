@@ -206,7 +206,7 @@ export default function App() {
             </div>
 
             {/* Left side filters (Desktop) */}
-            <div className="hidden md:flex items-center gap-3 ml-6 border-l border-white/10 pl-6">
+            <div className="hidden sm:flex items-center gap-3 ml-6 border-l border-white/10 pl-6">
               <div className="flex items-center bg-white/5 rounded-full p-1 border border-white/10 backdrop-blur-sm">
                 <button
                   onClick={() => setCollection('rabbana')}
@@ -273,6 +273,51 @@ export default function App() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6">
           <p className="text-[10px] uppercase tracking-widest text-amber-500 font-bold">by DrFendi Ameen</p>
           <p className="text-[10px] text-slate-400">afandi.amin@customs.gov.my</p>
+        </div>
+      </div>
+
+      {/* Fixed Left Sidebar (visible on xl+ screens where there's space) */}
+      <div className="fixed left-6 top-1/2 -translate-y-1/2 z-20 hidden xl:flex flex-col gap-4">
+        <div className="flex flex-col items-center bg-white/5 rounded-2xl p-1.5 border border-white/10 backdrop-blur-md gap-1">
+          <button
+            onClick={() => setCollection('rabbana')}
+            className={cn(
+              "w-full px-4 py-2 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all text-center",
+              collection === 'rabbana' ? "bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 shadow-[0_0_15px_rgba(245,158,11,0.3)]" : "text-slate-400 hover:text-amber-400"
+            )}
+          >
+            Rabbana
+          </button>
+          <button
+            onClick={() => setCollection('allahumma')}
+            className={cn(
+              "w-full px-4 py-2 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all text-center",
+              collection === 'allahumma' ? "bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 shadow-[0_0_15px_rgba(245,158,11,0.3)]" : "text-slate-400 hover:text-amber-400"
+            )}
+          >
+            Allahumma
+          </button>
+        </div>
+
+        <div className="flex flex-col items-center bg-white/5 rounded-2xl p-1.5 border border-white/10 backdrop-blur-md gap-1">
+          <button
+            onClick={() => setLanguage('ms')}
+            className={cn(
+              "w-full px-4 py-2 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all text-center",
+              language === 'ms' ? "bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 shadow-[0_0_15px_rgba(245,158,11,0.3)]" : "text-slate-400 hover:text-amber-400"
+            )}
+          >
+            Malay
+          </button>
+          <button
+            onClick={() => setLanguage('en')}
+            className={cn(
+              "w-full px-4 py-2 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all text-center",
+              language === 'en' ? "bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 shadow-[0_0_15px_rgba(245,158,11,0.3)]" : "text-slate-400 hover:text-amber-400"
+            )}
+          >
+            English
+          </button>
         </div>
       </div>
 
